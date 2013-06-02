@@ -1,10 +1,10 @@
 <div class="hero-unit">
 <h2>Create a new notice</h2>
 
-<?php echo validation_errors(); ?>
+<?php if (isset($formNoticeError)) echo $formNoticeError; ?>
 
 <?php echo form_open('news/create') ?>
-
+        <input type="hidden" name="addNoticeForm" value="addNoticeForm"/>
 	<label for="title">Title</label> 
 	<input type="input" name="title" class="input-xxlarge"/><br />
 
