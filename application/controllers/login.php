@@ -16,18 +16,22 @@ class Login extends CI_Controller{
             $this->load->view('templates/header', $data);	
             $this->load->view('templates/menu');	
             $this->load->view('pages/error');
-            $this->load->view('templates/footer'); 
+            $this->load->view('templates/footer');
         }else{
-            echo 'Correcto';
+           $data['title'] = 'Welcome';             
+            $this->load->view('templates/header', $data);	
+            $this->load->view('templates/menu');	
+            $this->load->view('pages/welcome');
+            $this->load->view('templates/footer');
         }
     }
     public function verifyUser() {
-        $name = $this->input->post('username');
+        $user = $this->input->post('username');
         $pass = $this->input->post('password');
         
         $this->load->model('login_model');
         
-        if($this->login_model->login($name, $pass)){
+        if($this->login_model->login($user, $pass)){
             return true;
         }else{
             $this->form_validation->set_message('verifyUser', 'Incorrect Username or Password! Please try again.');

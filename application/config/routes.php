@@ -38,6 +38,7 @@
 |
 */
 
+$route['pages/register'] = 'register/checkRegister';
 $route['templates/menu'] = 'login/checkLogin';
 $route['news/create'] = 'news/create';
 $route['news/(:any)'] = 'news/view/$1';

@@ -23,7 +23,8 @@
             <input type="hidden" name="formLogin" value="formLogin">
             <input class="span2" type="text" placeholder="Username" name="username">
             <input class="span2" type="password" placeholder="Password" name="password">
-            <button type="submit" class="btn">Sign in</button>
+            <button type="submit" class="btn btn-success">Sign in</button>
+            <a href="<?php echo base_url() ?>index.php/register" class="btn btn-primary">Register</a>
           </form>
         </div><!--/.nav-collapse -->
       </div>

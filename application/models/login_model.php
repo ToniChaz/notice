@@ -1,10 +1,10 @@
 <?php
 
 class Login_model extends CI_Model{
-   public function login($name, $pass){
-        $this->db->select('name, pass');
-        $this->db->from('members');
-        $this->db->where('name', $name);
+   public function login($user, $pass){
+        $this->db->select('user, pass');
+        $this->db->from('users');
+        $this->db->where('user', $user);
         $this->db->where('pass', $pass);
         
         $query = $this->db->get();
