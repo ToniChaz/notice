@@ -6,15 +6,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="brand" href="<?php echo base_url() ?>index.php/home">Notice</a>
+            <a class="brand" href="<?php echo base_url() ?>home">Notice</a>
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li><a href="<?php echo base_url() ?>index.php/home">Home</a></li>
-                    <li><a href="<?php echo base_url() ?>index.php/about">About</a></li>
+                    <li><a href="<?php echo base_url() ?>home">Home</a></li>
+                    <li><a href="<?php echo base_url() ?>about">About</a></li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">News <b class="caret"></b></a>            
                         <ul class="dropdown-menu">
-                            <li><a href="<?php echo base_url() ?>index.php/news">View Notice</a></li>                
-                            <li><a href="<?php echo base_url() ?>index.php/news/create">Create Notice</a></li>                
+                            <li><a href="<?php echo base_url() ?>news">View Notice</a></li>                
+                            <li><a href="<?php echo base_url() ?>news/create">Create Notice</a></li>                
                         </ul>
                     </li>
                 </ul>          
@@ -25,7 +25,7 @@
                 <input class="span2" type="text" placeholder="Username" name="username">
                 <input class="span2" type="password" placeholder="Password" name="password">
                 <button type="submit" class="btn btn-success">Sign in</button>
-                <a href="<?php echo base_url() ?>index.php/register" class="btn btn-primary">Register</a>
+                <a href="<?php echo base_url() ?>register" class="btn btn-primary">Register</a>
                 </form>
             </div><!--/.nav-collapse -->
         </div>
