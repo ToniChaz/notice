@@ -13,27 +13,42 @@
                     <li><a href="<?php echo base_url() ?>about">About</a></li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">News <b class="caret"></b></a>            
                         <ul class="dropdown-menu">
-                            <li><a href="<?php echo base_url() ?>news">View Notice</a></li>                
-                            <li><a href="<?php echo base_url() ?>news/create">Create Notice</a></li>                
+                            <li><a href="<?php echo base_url() ?>news">View Notice</a></li>
+                            <?php if ($this->session->userdata('login_state') == true) { ?>
+                                <li><a href="<?php echo base_url() ?>news/create">Create Notice</a></li>
+                            <?php } ?>
                         </ul>
                     </li>
                 </ul>          
-                <?php $attributes = array('class' => 'navbar-form pull-right');
-                echo form_open('templates/menu', $attributes);
-                ?>
-                <input type="hidden" name="formLogin" value="formLogin">
-                <input class="span2" type="text" placeholder="Username" name="username">
-                <input class="span2" type="password" placeholder="Password" name="password">
-                <button type="submit" class="btn btn-success">Sign in</button>
-                <a href="<?php echo base_url() ?>register" class="btn btn-primary">Register</a>
-                </form>
+                <?php
+                if ($this->session->userdata('login_state') == false) {
+                    $attributes = array('class' => 'navbar-form pull-right');
+                    echo form_open('templates/menu', $attributes);
+                    ?>
+                    <input type="hidden" name="formLogin" value="formLogin">
+                    <input class="span2" type="text" placeholder="Username" name="username">
+                    <input class="span2" type="password" placeholder="Password" name="password">
+                    <button type="submit" class="btn btn-success">Sign in</button>
+                    <a href="<?php echo base_url() ?>register" class="btn btn-primary">Register</a>
+                    </form> 
+                    <?php
+                } else {
+                    $attributes = array('class' => 'navbar-form pull-right');
+                    echo form_open('templates/menu', $attributes);
+                    ?>
+                    <input type="hidden" name="formLogin" value="formLogin">
+                    <input type="hidden" name="logout" value="logout">
+                    <button type="submit" class="btn btn-warning">Sign out</button>
+                    </form> 
+                <?php } ?>
+
             </div><!--/.nav-collapse -->
         </div>
     </div>
 </div>
-    <?php if (isset($formLoginError)) { ?>
+<?php if (isset($formLoginError)) { ?>
     <div class="alert alert-error pull-right loginError">
-    <?php echo $formLoginError; ?>
+        <?php echo $formLoginError; ?>
     </div>
-<?php
+    <?php
 }?>

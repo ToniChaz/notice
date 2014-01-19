@@ -39,7 +39,7 @@ class News extends CI_Controller {
         $this->form_validation->set_rules('title', 'Title', 'required');
         $this->form_validation->set_rules('text', 'text', 'required');
 
-        if ($this->form_validation->run() === FALSE) {
+        if ($this->form_validation->run() === false) {
             if ($this->input->post('addNoticeForm')) {
                 $data['formNoticeError'] = validation_errors();
             }
